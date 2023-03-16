@@ -45,8 +45,13 @@ export default {
   data(){
     return{
       campoInput:null,
+      title: "TodoList"
     }
-  }, methods:{
+  }, 
+  mounted(){
+    document.title = this.title;
+  }
+  ,methods:{
     handleAddTarefa(){
      this.$store.commit('adicionarTarefa', this.campoInput)
         this.campoInput = null
